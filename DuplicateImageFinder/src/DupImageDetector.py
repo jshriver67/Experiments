@@ -589,9 +589,9 @@ def main():
         
         if duplicate_groups:
             finder.generate_report(duplicate_groups, args.output, args.output_file)
-            
-            if args.auto_delete:
-                finder.auto_delete_duplicates(duplicate_groups, args.auto_delete, args.dry_run)
+            # remove autodelete option
+            # if args.auto_delete:
+            #     finder.auto_delete_duplicates(duplicate_groups, args.auto_delete, args.dry_run)
         else:
             print("No duplicate images found!")
             
