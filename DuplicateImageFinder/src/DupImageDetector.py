@@ -19,6 +19,7 @@ from dataclasses import dataclass
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from collections import defaultdict
 
+# Note 1: this should have been Pillow
 try:
     from PIL import Image, ExifTags
     import imagehash
