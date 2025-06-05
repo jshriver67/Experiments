@@ -9,6 +9,8 @@ license = {text = "GNU"}
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
+    "pillow (>=11.2.1,<12.0.0)",
+    "imagehash (>=4.3.2,<5.0.0)"
 ]
 
 

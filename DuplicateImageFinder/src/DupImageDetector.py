@@ -19,14 +19,31 @@ from dataclasses import dataclass
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from collections import defaultdict
 
-# Note 1: this should have been Pillow
+# Ok so this isn't ideal the error message is a little confusing because we are doing two packages at once
+#try:
+#    from PIL import Image, ExifTags
+#    import imagehash
+#except ImportError:
+#   print("Required packages missing. Install with:")
+#   print("pip install Pillow imagehash")
+#    sys.exit(1)
+
 try:
     from PIL import Image, ExifTags
+except ImportError:
+    print("Required packages missing. Install with:")
+    print("pip install Pillow")
+    sys.exit(1)
+
+try:
     import imagehash
 except ImportError:
     print("Required packages missing. Install with:")
-    print("pip install Pillow imagehash")
+    print("pip install imagehash")
+    #Note that's a pretty heavy set of dependencies, numpy, pywavelets, scipy
     sys.exit(1)
+
+
 
 @dataclass
 class ImageInfo:
